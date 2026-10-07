@@ -1,17 +1,39 @@
 {
   "round": "round-2",
-  "team": "BB-XXX",
-  "queries_used": 0,
+  "team": "BB-024",
+  "queries_used": 16,
   "claims": [
     {
       "type": "feature_effect",
-      "feature": "x1",
+      "feature": "months_active",
       "direction": "increases",
       "strength": "strong",
-      "confidence": 0.0,
+      "confidence": 0.8,
       "evidence": {
-        "query_ids": [],
-        "summary": "Replace this example claim with your own. Every claim needs evidence."
+        "query_ids": [16],
+        "summary": "Increasing months_active was associated with an approval score of 0.9789 in query 16."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "recent_chargebacks",
+      "direction": "decreases",
+      "strength": "strong",
+      "confidence": 0.8,
+      "evidence": {
+        "query_ids": [16],
+        "summary": "Changing recent_chargebacks was associated with a high approval score of 0.9789 in query 16."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "utilisation",
+      "direction": "increases",
+      "strength": "strong",
+      "confidence": 0.8,
+      "evidence": {
+        "query_ids": [16],
+        "summary": "Changing utilisation was associated with an approval score of 0.9789 in query 16."
       }
     }
   ]
