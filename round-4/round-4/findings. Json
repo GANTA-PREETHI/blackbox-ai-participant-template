@@ -1,0 +1,49 @@
+{
+  "system": "GK-03",
+  "round": 4,
+  "task": "Reconstruction of payment fraud approval model",
+
+  "inputs": [
+    "account_age_days",
+    "account_balance",
+    "amount",
+    "beneficiaries",
+    "channel",
+    "linked_cards",
+    "months_active",
+    "recent_chargebacks",
+    "trust_score",
+    "utilisation"
+  ],
+
+  "outputs": [
+    "score",
+    "decision"
+  ],
+
+  "decision_values": [
+    "APPROVE",
+    "DECLINE"
+  ],
+
+  "observations": [
+    "The black-box system returns an approval score between 0 and 1.",
+    "The system returns either APPROVE or DECLINE.",
+    "Changing input parameters can change the returned score.",
+    "Both numerical and categorical input fields are present.",
+    "The reconstruction uses observations collected by querying the black-box system."
+  ],
+
+  "reconstruction": {
+    "method": "Machine learning",
+    "goal": "Approximate the observed score and decision produced by GK-03",
+    "training_data": "Collected black-box query results",
+    "evaluation": "Compare reconstructed predictions with observed black-box outputs"
+  },
+
+  "limitations": [
+    "The internal implementation of GK-03 is unknown.",
+    "The reconstructed model approximates the observed black-box behaviour.",
+    "The quality of the reconstruction depends on the collected query data."
+  ]
+}
