@@ -1,18 +1,52 @@
 {
-  "round": "round-4",
-  "team": "BB-XXX",
-  "queries_used": 0,
-  "claims": [
+  "system": "GK-03",
+  "round": 4,
+  "task": "Reconstruction of payment fraud approval model",
+
+  "input_features": [
+    "account_age_days",
+    "account_balance",
+    "amount",
+    "beneficiaries",
+    "channel",
+    "linked_cards",
+    "months_active",
+    "recent_chargebacks",
+    "trust_score",
+    "utilisation"
+  ],
+
+  "output": {
+    "score_range": "0.0-1.0",
+    "decisions": [
+      "APPROVE",
+      "DECLINE"
+    ]
+  },
+
+  "observations": [
     {
-      "type": "feature_effect",
-      "feature": "x1",
-      "direction": "increases",
-      "strength": "strong",
-      "confidence": 0.0,
-      "evidence": {
-        "query_ids": [],
-        "summary": "Replace this example claim with your own. Every claim needs evidence."
-      }
+      "finding": "The system produces an approval score between 0 and 1."
+    },
+    {
+      "finding": "The decision is associated with the approval score."
+    },
+    {
+      "finding": "Changing individual input fields changes the returned score."
+    },
+    {
+      "finding": "The input fields can contain numerical and categorical values."
     }
+  ],
+
+  "reconstruction_method": {
+    "approach": "Machine learning regression/classification model trained on collected black-box queries",
+    "training_data": "Collected query inputs and corresponding black-box outputs",
+    "evaluation": "Compare reconstructed predictions with observed black-box scores and decisions"
+  },
+
+  "limitations": [
+    "The exact internal implementation of GK-03 is unknown.",
+    "The reconstruction approximates the observed black-box behavior."
   ]
 }
